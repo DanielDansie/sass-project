@@ -1,0 +1,72 @@
+@use '_variables.scss';
+
+@mixin contentfont {
+    font: variables.$font-stack;
+    color: variables.$secondary-color;
+}
+
+html, body, header, main, .left, .right, figure {
+    margin: 0;
+    padding: 0;
+    margin-block: 0;
+    margin-inline: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    background-image: url(../images/office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h3 {
+    color: variables.$primary-color;
+}
+
+h1 {
+    font: variables.$font-bold;
+}
+
+h2{
+    border-bottom: 3px solid variables.$secondary-color;
+    width: 6%;
+}
+
+img {
+    max-width: 33%;
+    border-radius: 50%;
+}
+
+.daniel {
+}
+
+main {
+    padding: 0 5% 1%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+
+    p {
+        @include contentfont()
+    }
+
+    ul {
+        li {
+            @extend p
+        }
+    }
+
+    .left {
+        flex-direction: column;
+        width: 30%;
+        margin: 0 10px;
+    }
+
+    .right {
+        background-color: variables.$background-color;
+    }
+}

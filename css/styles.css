@@ -1,3 +1,56 @@
+html, body, header, main, .left, .right, figure {
+  margin: 0;
+  padding: 0;
+  margin-block: 0;
+  margin-inline: 0;
+}
 
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-image: url(../images/office.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1, h3 {
+  color: #fff;
+}
+
+h1 {
+  font: bold, 10em;
+}
+
+h2 {
+  border-bottom: 3px solid #6e6f70;
+  width: 6%;
+}
+
+img {
+  max-width: 33%;
+  border-radius: 50%;
+}
+
+main {
+  padding: 0 5% 1%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+.content p, .content ul li {
+  font: sans-serif, 1em;
+  color: #6e6f70;
+}
+.content .left {
+  flex-direction: column;
+  width: 30%;
+  margin: 0 10px;
+}
+.content .right {
+  background-color: #a5c6d4;
+}
 
 /*# sourceMappingURL=styles.css.map */
