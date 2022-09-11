@@ -1,5 +1,9 @@
 @use '_variables.scss';
 
+@mixin htag {
+    font: variables.$font-bold;
+    color: variables.$htag-color;    
+}
 @mixin contentfont {
     font: variables.$font-stack;
     color: variables.$secondary-color;
@@ -12,13 +16,22 @@ html, body, header, main, .left, .right, figure {
     margin-inline: 0;
 }
 
+body {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
 .header {
     display: flex;
-    justify-content: space-around;
-    background-image: url(../images/office.jpg);
+    background-image: url(../images/office-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    figure {
+        max-width: 33%;
+        padding-left: 3%;
+    }
 }
 
 h1, h3 {
@@ -26,24 +39,41 @@ h1, h3 {
 }
 
 h1 {
-    font: variables.$font-bold;
+    font-size: 4em;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 h2{
-    border-bottom: 3px solid variables.$secondary-color;
-    width: 6%;
+    @include htag();
+    padding-top: 4%;
+    margin-block: 0;
+}
+
+hr {
+    width: 20%;
+    text-align: left;
+    margin-left: 0;
+    margin: 10px 0;
+    height: 3px;
+    background-color: variables.$secondary-color;
+    border-style: none;
 }
 
 img {
-    max-width: 33%;
+    max-width: 100%;
+    max-height: auto;
     border-radius: 50%;
 }
 
 .daniel {
+    padding: 0 10%;
 }
 
 main {
-    padding: 0 5% 1%;
+margin-left: 2%;
 }
 
 .content {
@@ -51,22 +81,49 @@ main {
     flex-direction: row;
 
     p {
-        @include contentfont()
+        @include contentfont();
+        margin-top: 10px;
+        margin-block: 0;
+        margin-inline: 0;
+    }
+
+    i {
+        color: black;
+        margin-right: 2%;
+    }
+
+    a {
+        @extend p;
+        text-decoration: none;
     }
 
     ul {
+        margin-inline: 0;
+        margin-block: 0;
+        h5 {
+            @include contentfont();
+            margin: 5px;
+        }
+        span {
+            color: black;
+        }
         li {
-            @extend p
+            @extend p;
         }
     }
 
     .left {
         flex-direction: column;
         width: 30%;
-        margin: 0 10px;
+        padding: 0 2%;
     }
 
     .right {
         background-color: variables.$background-color;
+        padding: 0 3%;
     }
+}
+
+.info {
+    margin-bottom: 10px;
 }
